@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</td>
+                    <th>title</td>
+                    <th>views</td>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Posts Management</h3>
+        <input type="text" id="id_txt" placeholder="ID (leave empty for new)"/>
+        <input type="text" id="title_txt" placeholder="Title"/>
+        <input type="text" id="views_txt" placeholder="Views"/>
+        <input type="submit" value="Save" onclick="Save()"/>
+    </div>
+
+    <hr/>
+
+    <div>
+        <h3>Comments Management</h3>
+        <div>
+            <label>Select Post:</label>
+            <select id="post_select" onchange="LoadComments()">
+                <option value="">-- Select a post --</option>
+            </select>
+        </div>
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Comment ID</th>
+                    <th>Text</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="comments-table-body">
+            </tbody>
+        </table>
+        <br/>
+        <h4>Add/Edit Comment</h4>
+        <input type="text" id="comment_id_txt" placeholder="Comment ID (leave empty for new)" style="display:none;"/>
+        <input type="text" id="comment_text_txt" placeholder="Comment text"/>
+        <input type="submit" value="Save Comment" onclick="SaveComment()"/>
+        <input type="submit" value="Clear" onclick="ClearCommentForm()"/>
+    </div>
+</body>
+</html>
